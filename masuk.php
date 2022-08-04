@@ -120,7 +120,7 @@ require 'cek.php';
                                             while($data=mysqli_fetch_array($ambilsemuadatastock)){
                                                 $idb = $data['idbarang'];
                                                 $idm = $data['idmasuk'];
-                                                $tanggal = $data['tanggal'];
+                                                $tanggalbarang = $data['tanggalbarang'];
                                                 $namabarang = $data['namabarang'];
                                                 $qty = $data['qty'];
                                                 $keterangan = $data['keterangan'];
@@ -138,7 +138,7 @@ require 'cek.php';
                                             
                                             ?>
                                             <tr>
-                                                <td><?=$tanggal;?></td>
+                                                <td><?=$tanggalbarang;?></td>
                                                 <td><?=$img;?></td>
                                                 <td><?=$namabarang;?></td>
                                                 <td><?=$qty;?></td>

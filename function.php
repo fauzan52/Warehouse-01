@@ -7,6 +7,7 @@ $conn = mysqli_connect("localhost","root","","warehouse");
 
 //menambah barang baru
 if(isset($_POST['addnewbarang'])){
+    $tanggalbarang = $_POST['tanggalbarang'];
     $namabarang = $_POST['namabarang'];
     $deskripsi = $_POST['deskripsi'];
     $stock = $_POST['stock'];
@@ -37,7 +38,7 @@ if(isset($_POST['addnewbarang'])){
         if($ukuran < 15000000){
             move_uploaded_file($file_tmp, 'images/'.$image);
 
-            $addtotable = mysqli_query($conn,"insert into stock (namabarang, deskripsi, stock, image) values('$namabarang','$deskripsi','$stock','$image')");
+            $addtotable = mysqli_query($conn,"insert into stock (tanggalbarang, namabarang, deskripsi, stock, image) values('$tanggalbarang', '$namabarang','$deskripsi','$stock','$image')");
             if($addtotable){
                 header('location:index.php');
             } else {
@@ -135,6 +136,7 @@ if(isset($_POST['addbarangkeluar'])){
 //update info barang
 if(isset($_POST['updatebarang'])){
     $idb = $_POST['idb'];
+    $tanggalbarang = $_POST['tanggalbarang'];
     $namabarang = $_POST['namabarang'];
     $deskripsi = $_POST['deskripsi'];
 
